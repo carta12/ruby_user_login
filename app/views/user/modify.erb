@@ -1,0 +1,7 @@
+<h1>회원정보 수정 페이지</h1>
+
+<form action = "/user/update/<%= @user.id%>">
+    <input type="text" name="email" value="<%= @user.email %>"><br/>
+    <input type="text" name="password" placeholder="password"><br/>
+    <button type="submit" class="btn btn-primary">정보수정</button>
+</form>

@@ -1,0 +1,23 @@
+<h1>회원가입 현황</h1>
+<p><%= @email%>님 로그인 되었습니다.</p>
+<a href="/user/new">회원가입</a>
+<a href="/user/login">로그인</a><br/><br/>
+
+
+
+<table  style="width:100%; border:1px solid black; text-align:center;">
+  <tr>
+    <th>No</th>
+    <th>Email</th> 
+    <th>Password</th>
+    <th>정보변경</th>
+  </tr>
+  <% @users.each do |user| %>
+  <tr>
+    <td style="border:1px solid black;"><%= user.id %></td>
+    <td style="border:1px solid black;"><%= user.email %></td> 
+    <td style="border:1px solid black;"><%= user.password %></td>
+    <td style="border:1px solid black;"><a href="/user/modify/<%= user.id %>">[수정]</a> <a href="/user/destroy/<%= user.id %>">[삭제]</a></td>
+  </tr>
+  <% end %>
+</table>
